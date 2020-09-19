@@ -16,7 +16,7 @@ public class DiskSpace {
         {    //8, 2,4,3,7,6
             //remove the first element if Queue is more than k element
          //   System.out.println(" peek "+deque.peekFirst()+" ---> "+i);
-            if(!deque.isEmpty() && i-segmentLen+1>deque.peekFirst()){
+            while(!deque.isEmpty() && i-segmentLen+1>deque.peekFirst()){
                 deque.pollFirst();
            //     System.out.println("removing peek first ");
             }
