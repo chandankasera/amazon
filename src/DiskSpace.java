@@ -13,7 +13,7 @@ public class DiskSpace {
         int len = diskspace.length;
         Deque<Integer> deque = new LinkedList<>();
         for(int i=0;i<diskspace.length;i++)
-        {    //8, 2,4,3,7,6
+        {
             //remove the first element if Queue is more than k element
          //   System.out.println(" peek "+deque.peekFirst()+" ---> "+i);
             while(!deque.isEmpty() && i-segmentLen+1>deque.peekFirst()){
@@ -27,7 +27,7 @@ public class DiskSpace {
 
             deque.offerLast(i);
             if(i-segmentLen+1>0){
-                //0,1,2
+
               //  System.out.println("value when new window comes up "+i+" taking out "+deque.peekFirst());
                 maxMinima=Math.max(maxMinima,diskspace[deque.peekFirst()]);
             }
