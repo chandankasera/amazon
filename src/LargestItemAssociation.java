@@ -17,14 +17,21 @@ public class LargestItemAssociation {
             map.get(p.second).add(p.first);
         }
 
-        PriorityQueue<String> pq = new PriorityQueue<>((a,b)->map.get(b).size()-map.get(a).size());
+      //  PriorityQueue<String> pq = new PriorityQueue<>((a,b)->map.get(b).size()-map.get(a).size());
+
+        int max = Integer.MIN_VALUE;
+        String maxString = "";
         for(String item : map.keySet()){
            // System.out.println(" "+item);
          //   System.out.println(" "+map.get(item));
-            pq.offer(item);
+            if(max<map.get(item).size()){
+                max=map.get(item).size();
+                maxString=item;
+            }
+       //     pq.offer(item);
         }
       //  System.out.println(pq.toString());
-        TreeSet<String> set = new TreeSet<>(map.get(pq.poll()));
+        TreeSet<String> set = new TreeSet<>(map.get(maxString));
 
         for(String str : set){
             result.add(str);
