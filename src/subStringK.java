@@ -12,7 +12,7 @@ public class subStringK {
             System.out.println(" "+lo+" "+hi);
             char ch = str.charAt(hi);
             if(map.containsKey(ch)){
-                System.out.println(ch+"--->"+lo+" "+map.get(ch));
+               System.out.println(ch+"--->"+lo+" "+map.get(ch));
                 lo= Math.max(map.get(ch),lo);
             }
 
